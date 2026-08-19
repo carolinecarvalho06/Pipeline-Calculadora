@@ -1,0 +1,82 @@
+name: Pipeline Calculadora
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+
+  teste_soma:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar pytest
+        run: pip install pytest
+
+      - name: Testar soma
+        run: pytest test_soma.py
+
+
+  teste_subtracao:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar pytest
+        run: pip install pytest
+
+      - name: Testar subtração
+        run: pytest test_subtracao.py
+
+
+  teste_multiplicacao:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar pytest
+        run: pip install pytest
+
+      - name: Testar multiplicação
+        run: pytest test_multiplicacao.py
+
+
+  teste_divisao:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar pytest
+        run: pip install pytest
+
+      - name: Testar divisão
+        run: pytest test_divisao.py
